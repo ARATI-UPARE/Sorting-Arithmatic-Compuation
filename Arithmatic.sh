@@ -3,8 +3,10 @@
 # WAP to take read three numbers from user
 # find result of arithmatic operations.
 # Add all results in dictionary.
+# Add array to read result from dictionary.
 
 declare -A dict
+declare -a array
 
 read -p "Enter Three Numbers " a b c
 echo "a=$a b=$b c=$c "
@@ -29,7 +31,11 @@ echo "Result4=$result4"
 
 dict=( [R1]=$result1 [R2]=$result2 [R3]=$result3 [R4]=$result4 )
 
+# Read elements of dictionary in array
+count=0
 for key in "${!dict[@]}"
 do
-		echo "$key: ${dict[$key]}"
+				array[$count]=${dict[$key]}
+				(( count++ ))
 done
+echo ${array[@]}
