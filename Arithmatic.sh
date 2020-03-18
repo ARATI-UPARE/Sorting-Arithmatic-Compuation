@@ -1,6 +1,11 @@
 #! /bin/bash  -x
 
-# WAP to take read three numbers from user and find result of arithmatic operations.
+# WAP to take read three numbers from user
+# find result of arithmatic operations.
+# Add all results in dictionary.
+
+declare -A dict
+
 read -p "Enter Three Numbers " a b c
 echo "a=$a b=$b c=$c "
 
@@ -19,3 +24,12 @@ echo "Result3=$result3"
 # Equation4 (a%b+c)
 result4=`echo "scale=2; $a % $b + $c " | bc`
 echo "Result4=$result4"
+
+# Dictionary to store result
+
+dict=( [R1]=$result1 [R2]=$result2 [R3]=$result3 [R4]=$result4 )
+
+for key in "${!dict[@]}"
+do
+		echo "$key: ${dict[$key]}"
+done
