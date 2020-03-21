@@ -4,9 +4,13 @@
 # find result of arithmatic operations.
 # Add all results in dictionary.
 # Add array to read result from dictionary.
+# Sort array in Desending order
+# Sort array in ascending order
 
 declare -A dict
 declare -a array
+
+echo "#### Welcome to Arithmatic Computation ####"
 
 read -p "Enter Three Numbers " a b c
 echo "a=$a b=$b c=$c "
