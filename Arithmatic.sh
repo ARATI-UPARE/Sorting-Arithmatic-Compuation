@@ -7,6 +7,7 @@
 # Sort array in Desending order
 # Sort array in ascending order
 
+echo "#### Welcome to Arithmatic Computation ####"
 declare -A dict
 declare -a array
 
@@ -43,3 +44,41 @@ do
 				(( count++ ))
 done
 echo ${array[@]}
+
+# Sorting array in Desending order
+temp=0
+length=${#array[@]}        # length of array
+
+for(( outLoop=0; outLoop<=$length; outLoop++ ))
+do
+		for(( inLoop=$(( $outLoop + 1 )); inLoop<=$length; inLoop++ ))
+		do
+				if [[ ${array[outLoop]%%.*} -lt ${array[inLoop]%%.*} ]]
+				then
+						temp="${array[$outLoop]}"
+						array[$outLoop]="${array[$inLoop]}"
+						array[$inLoop]=$temp
+				fi
+		done
+done
+
+echo "Sorted Array in Desending order :"
+echo "${array[@]}"
+
+# Sorting Array in Ascending order.
+
+for(( outLoop=0; outLoop<=$length; outLoop++ ))
+do
+      for(( inLoop=$(( $outLoop + 1 )); inLoop<=$length; inLoop++ ))
+      do
+            if [[ ${array[outLoop]%%.*} -gt ${array[inLoop]%%.*} ]]
+            then
+                  temp="${array[$outLoop]}"
+                  array[$outLoop]="${array[$inLoop]}"
+                  array[$inLoop]=$temp
+            fi
+      done
+done
+
+echo "Sorted Array in Ascending order :"
+echo "${array[@]}"
