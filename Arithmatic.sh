@@ -10,8 +10,6 @@
 
 # Sort aeeay in Ascending order
 
-
-echo "#### Welcome to Arithmatic Computation ####"
 declare -A dict
 declare -a array
 
