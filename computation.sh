@@ -5,11 +5,11 @@
 # Add all results in dictionary.
 # Add array to read result from dictionary.
 # Sort array in Desending order
-
+<<<<<<< HEAD
 # Sort array in ascending order
-
+=======
 # Sort aeeay in Ascending order
-
+>>>>>>> UC9
 
 echo "#### Welcome to Arithmatic Computation ####"
 declare -A dict
